@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.responses import RedirectResponse
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -14,6 +15,7 @@ def get_db():
         yield db
     finally:
         db.close()
+        
 
 @app.get("/events")
 def get_all_events(db: Session = Depends(get_db)):

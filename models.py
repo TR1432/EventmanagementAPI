@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Date
-from sqlalchemy.orm import relationship, DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase
 
 class Base(DeclarativeBase):
     pass 
